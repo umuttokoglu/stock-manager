@@ -7,10 +7,9 @@
 .sidenav {
   position: fixed;
   right: -30px;
-  top: 147px;
+  top: 125px;
   width: 236px;
-  height: auto;
-  border-left: 1px solid #e0e6ed;
+  border-left: 1px solid $m-color_3;
 
   .sidenav-header {
     &:after {
@@ -22,12 +21,12 @@
       font-size: 18px;
       color: #fff;
       margin-bottom: 20px;
-      background: #1b55e2;
+      background: $primary;
       text-align: center;
       border-radius: 5px;
       padding: 4px;
       letter-spacing: 1px;
-      background-image: linear-gradient(to right, #1b55e2 0%, #5c1ac3 100%);
+      background-image: linear-gradient(to right, $primary 0%, $secondary 100%);
     }
   }
 
@@ -39,20 +38,20 @@
     a {
       display: block;
       padding: 3px 0px;
-      color: #3b3f5c;
+      color: $dark;
       font-size: 12px;
       padding: 3px 25px;
 
       &.active {
-        color: #5c1ac3;
+        color: $secondary;
         font-weight: 700;
-        border-left: 1px solid #5c1ac3;
+        border-left: 1px solid $secondary;
       }
 
       &:hover {
-        color: #1b55e2;
+        color: $primary;
         font-weight: 700;
-        border-left: 1px solid #5c1ac3;
+        border-left: 1px solid $secondary;
       }
     }
   }
@@ -61,8 +60,8 @@
 #content > .container {
   display: flex;
   max-width: 58.333333% !important;
-  margin-left: 14px;
-  padding: 0 32px !important;
+  margin-left: 80px;
+  padding: 0 16px !important;
 
   > .container {
     padding: 0;
@@ -78,12 +77,6 @@
   }
 }
 
-@media (max-width: 991px) {
-  #content > .container {
-    padding: 0 16px !important;
-  }
-}
-
 @media (max-width: 1199px) {
   .sidenav {
     display: none;
@@ -96,11 +89,5 @@
     > .container {
       max-width: 100%;
     }
-  }
-}
-
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  .sidenav {
-    display: none;
   }
 }
