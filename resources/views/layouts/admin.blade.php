@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
     <title>@yield('page-title', 'Stok Yönetim Paneli')</title>
-    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico"/>
+    <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/favicon.ico') }}"/>
     <link href="{{ asset('assets/css/loader.css') }}" rel="stylesheet" type="text/css" />
     <script src="{{ asset('assets/js/loader.js') }}"></script>
 
@@ -44,7 +44,21 @@
         <ul class="navbar-nav flex-row">
             <li>
                 <div class="page-header">
-                    @yield('breadcrumb')
+
+                    <ul class="navbar-nav flex-row">
+                        <li>
+                            <div class="page-header">
+                                <nav class="breadcrumb-one" aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item {{ (request()->segment(1) === null) ? 'active' : '' }}">
+                                            <a href="{{ route(\App\Constants\RouteNameConstants::DASHBOARD) }}">Yönetim Paneli</a>
+                                        </li>
+                                        @yield('breadcrumb')
+                                    </ol>
+                                </nav>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </li>
         </ul>
